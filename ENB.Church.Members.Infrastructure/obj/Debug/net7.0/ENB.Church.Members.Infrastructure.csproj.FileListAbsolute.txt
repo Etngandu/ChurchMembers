@@ -1,0 +1,12 @@
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\bin\Debug\net7.0\ENB.Church.Members.Infrastructure.deps.json
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\bin\Debug\net7.0\ENB.Church.Members.Infrastructure.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\bin\Debug\net7.0\ENB.Church.Members.Infrastructure.pdb
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.csproj.AssemblyReference.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.AssemblyInfoInputs.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.AssemblyInfo.cs
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\refint\ENB.Church.Members.Infrastructure.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ENB.Church.Members.Infrastructure.pdb
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Infrastructure\obj\Debug\net7.0\ref\ENB.Church.Members.Infrastructure.dll

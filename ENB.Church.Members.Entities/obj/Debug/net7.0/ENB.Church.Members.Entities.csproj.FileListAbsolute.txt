@@ -1,0 +1,15 @@
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.csproj.AssemblyReference.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.AssemblyInfoInputs.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.AssemblyInfo.cs
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.csproj.CoreCompileInputs.cache
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\bin\Debug\net7.0\ENB.Church.Members.Entities.deps.json
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\bin\Debug\net7.0\ENB.Church.Members.Entities.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\bin\Debug\net7.0\ENB.Church.Members.Entities.pdb
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\bin\Debug\net7.0\ENB.Church.Members.Infrastructure.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\bin\Debug\net7.0\ENB.Church.Members.Infrastructure.pdb
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.csproj.CopyComplete
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\refint\ENB.Church.Members.Entities.dll
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ENB.Church.Members.Entities.pdb
+C:\Devsource\ENB.Church.Members\ENB.Church.Members.Entities\obj\Debug\net7.0\ref\ENB.Church.Members.Entities.dll

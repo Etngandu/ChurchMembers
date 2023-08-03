@@ -1,0 +1,203 @@
+﻿@model ENB.Church.Members.MVC.Models.CreateAndEditMinistry
+@using ENB.Church.Members.Entities
+<div class="alert alert-primary" role="alert">
+    <h2><strong>Church Ministries </strong></h2>
+</div>
+
+<div class="row">
+    <div class="col-md-5 card-header">
+        <form asp-action="Save">            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-top:5px">
+                <input type="hidden" id="a_id" value="0" asp-for="Id" />
+                <label asp-for="MinistryCode" class="control-label card-header col-md-12" style="margin-bottom:5px;"></label>
+                <input asp-for="MinistryCode" id="a_ministry_code" class="form-control" />
+                <span asp-validation-for="MinistryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:5px">               
+                <label asp-for="MinistryName" class="control-label card-header col-md-12" style="margin-bottom:5px;"></label>
+                <input asp-for="MinistryName" id="a_ministry_Name" class="form-control" />
+                <span asp-validation-for="MinistryName" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top:5px">
+                <div class="card-header col-md-12" style="margin-bottom:5px;">
+                    <label asp-for="Ministry_Otherdetails" class="control-label"></label>
+                </div>
+                <input asp-for="Ministry_Otherdetails" id="a_ministry_Otherdetails" class="form-control" />
+                <span asp-validation-for="Ministry_Otherdetails" class="text-danger"></span>
+            </div>
+            <div class="col-md-5" style="margin-top:5px">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">                           
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="margin-left:20px">
+                        <div class="form-group">
+                            <input type="reset" class="btn btn-secondary"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="col-md-7">       
+        <table id="MinistryTable" class="table table-striped table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ministry_code</th>
+                    <th>Ministry_name</th>
+                    <th>Other_details</th>
+                    <th> </th>
+                </tr>
+            </thead>
+        </table>
+
+        <link href="~/lib/datatable/datatable1.13/datatables-1.13.4/css/jquery.datatables.min.css" rel="stylesheet" />
+        <link href="~/lib/datatable/datatable1.13/datatables-1.13.4/css/datatables.bootstrap5.min.css" rel="stylesheet" />
+        
+
+
+        @section scripts{
+            <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script type="text/javascript" charset="utf8" src="~/lib/datatable/datatable1.13/datatables-1.13.4/js/jquery.datatables.min.js"></script>
+            <script type="text/javascript" charset="utf8" src="~/lib/datatable/datatable1.13/datatables-1.13.4/js/datatables.bootstrap5.min.js"></script>
+            <script>
+
+                
+
+                var Popup, datatable
+                $(document).ready(function () {
+                    datatable = $("#MinistryTable").DataTable({
+                        "ajax": {
+                            "url": "/Ministry/GetMinistryData",
+                            "type": "GET",
+                            "datatype": "json"
+                        },
+                        "columns": [
+
+                            { "data": "id" },
+                            { "data": "ministryCode" },
+                            { "data": "ministryName" },
+                            { "data": "ministry_Otherdetails" },
+                            {
+                                "data": "id", "render": function (data) {
+                                    return "<button  class= 'btn btn-danger btn-sm btn_delete'  data-bs-toggle='tooltip' title='Delete' data-bs-placement='top' style = 'margin-left:5px' onclick='return popup("+ data +");' type='button' > <i class='fa-solid fa-trash-can' > </i><b></b > </button>" + "\r\n" +
+                                           "<a class= 'btn btn-primary btn-sm text-white'  data-bs-toggle='tooltip' title='Ministry Activity' data-bs-placement='top' style = 'margin-left:5px' onclick =location.href='@Url.Action("Index","MinistryActivity")?ministryId=" + data + "'> <i class='fa-solid fa-car' > </i></a>";
+                                },
+                                "orderable": false,
+                                "searchable": false,
+                                "width": "100px"
+                            }
+
+                        ],
+                        "language": {
+
+                            "emptyTable": "No data Found, Please Click On <b>Add New</b> Button"
+                        }
+
+                    });
+
+
+                    $('#MinistryTable tbody').on('click', 'tr', function () {
+                        if ($(this).hasClass('selected')) {
+                            $(this).removeClass('selected');
+                        } else {
+                            datatable.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                            var rdata = datatable.row( this ).data();
+                            console.log(rdata);
+                            populateForm(rdata);
+                        }
+                    });                 
+
+                });
+
+
+                class CreateAndEditMinistry {
+                    Id = 0;
+                    MinistryCode = "";
+                    MinistryName = "";
+                    Ministry_Otherdetails = "";
+                }
+
+                var formData = CreateAndEditMinistry = new CreateAndEditMinistry();
+
+
+                function populateForm(selectedRecord) {
+                    this.formData = Object.assign({}, selectedRecord);
+                    $('#a_ministry_code').val(this.formData.ministryCode);
+                    $('#a_ministry_Name').val(this.formData.ministryName);
+                    $('#a_ministry_Otherdetails').val(this.formData.ministry_Otherdetails);
+                    $('#a_id').val(this.formData.id);                    
+                    console.log(this.formData);
+                }
+
+
+
+                 function  popup (data) {
+                    console.log('clicked Delete');
+                    var heading = 'Confirm Delete Item DataTable';
+                    var question = 'Please confirm that you want to delete this? ';
+                    var cancelButtonTxt = 'Cancel';
+                    var okButtonTxt = 'Confirm';
+                    var callback = function () {                       
+                        console.log(data);
+                        window.location = '@Url.Action("Delete","Ministry")' + '?id=' + data;
+                      };
+
+                    if (confirm(heading, question, cancelButtonTxt, okButtonTxt, callback)) {
+                        callback;
+                    }
+
+                   
+                }
+
+
+                /* Generic Confirm func */
+                function confirm(heading, question, cancelButtonTxt, okButtonTxt, callback) {
+
+                    var confirmModal =
+                        $('<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">' +
+                            '<div class="modal-dialog">' +
+                            '<div class="modal-content">' +
+                            '<div class="modal-header">' +
+                            '<h5 class="modal-title" >' + heading + '</h5>' +
+                            '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>' +
+                            '</div>' +
+
+                            '<div class="modal-body">' +
+                            '<p class="alert alert-primary" role="alert">' + question + '</p>' +
+                            '</div>' +
+                            '<div class="modal-footer">' +
+                            '<button type="button" class="btn btn-secondary" aria-hidden="true" data-bs-dismiss="modal">' + cancelButtonTxt + '</button>' +
+                            '<button type ="button" data-dismiss="modal" id="okButton" aria-hidden="true" class="btn btn-primary">' +
+                            okButtonTxt +
+                            '</button>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>');
+
+                    confirmModal.find('#okButton').click(function (event) {
+                        callback();
+                        confirmModal.modal('hide');
+                    });
+
+                    confirmModal.modal('show');
+                };
+                        /* END          Generic Confirm func */
+
+
+
+            </script>
+        }
+    
+    </div>
+
+</div>

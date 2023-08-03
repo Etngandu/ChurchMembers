@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ENB.Church.Members.MVC.props" />
+</Project>

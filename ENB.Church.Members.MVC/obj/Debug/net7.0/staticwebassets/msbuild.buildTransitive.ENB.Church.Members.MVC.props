@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ENB.Church.Members.MVC.props" />
+</Project>
